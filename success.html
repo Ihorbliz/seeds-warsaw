@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дякуємо! Квиток підтверджено · Public Talk Варшава</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700;6..12,800;6..12,900&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel — Purchase event -->
+  <script>
+    var META_PIXEL_ID = 'YOUR_PIXEL_ID';
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', META_PIXEL_ID);
+    fbq('init', '1252470962932996');
+    fbq('track', 'PageView');
+    fbq('track', 'Purchase', {
+      value: 220, currency: 'PLN',
+      content_name: 'Public Talk Варшава 15.03.2026',
+      content_type: 'product'
+    });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1252470962932996&amp;ev=Purchase&amp;noscript=1"/></noscript>
+
+<style>
+:root {
+  --cream:  #F2EFE6;
+  --cream2: #EAE6DA;
+  --white:  #FDFBF7;
+  --black:  #1A1A18;
+  --orange: #D95523;
+  --gray:   #7A7A72;
+  --border: #D8D4C8;
+  --card:   #EDEAE0;
+  --green:  #2D7A4F;
+  --green-bg: #EAF4EE;
+  --radius: 20px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--black);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px; line-height: 1.65;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* ── HEADER ── */
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 56px;
+  border-bottom: 1px solid var(--border);
+  background: var(--cream);
+}
+.header-logo {
+  font-size: 13px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--black); text-decoration: none;
+}
+.header-logo em { color: var(--orange); font-style: normal; }
+.header-date { font-size: 13px; color: var(--gray); font-weight: 600; }
+
+/* ── TICKER ── */
+.ticker { overflow: hidden; background: var(--black); padding: 12px 0; }
+.ticker-track { display: flex; white-space: nowrap; animation: tick 22s linear infinite; }
+.t-item { display: inline-flex; align-items: center; gap: 16px; padding: 0 24px; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.3); }
+.t-item.o { color: var(--orange); }
+.t-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+@keyframes tick { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* ── MAIN ── */
+.main {
+  max-width: 900px; margin: 0 auto;
+  padding: 72px 56px 100px;
+}
+
+/* ── SUCCESS BADGE ── */
+.success-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--green-bg); color: var(--green);
+  padding: 8px 20px; border-radius: 100px;
+  font-size: 13px; font-weight: 800; letter-spacing: .5px;
+  margin-bottom: 32px;
+}
+.badge-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.4); opacity: .6; }
+}
+
+/* ── HERO TEXT ── */
+.page-title {
+  font-size: clamp(36px, 6vw, 72px); font-weight: 900;
+  text-transform: uppercase; line-height: 1; letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+.page-title .ac { color: var(--orange); }
+.page-subtitle {
+  font-size: 18px; font-weight: 400; color: var(--gray); line-height: 1.7;
+  max-width: 560px; margin-bottom: 56px;
+}
+.page-subtitle strong { color: var(--black); font-weight: 700; }
+
+/* ── GRID ── */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.grid-full { margin-bottom: 16px; }
+
+/* ── CARDS ── */
+.card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 32px 32px 28px;
+}
+.card-dark {
+  background: var(--black); color: var(--white);
+  border-radius: var(--radius); padding: 32px 32px 28px;
+  position: relative; overflow: hidden;
+}
+.card-dark::before {
+  content: ''; position: absolute; top: -60px; right: -60px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(217,85,35,.18); pointer-events: none;
+}
+.card-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--orange);
+  display: block; margin-bottom: 16px;
+}
+.card-dark .card-label { color: rgba(255,255,255,.35); }
+
+/* Location card */
+.loc-venue {
+  font-size: 26px; font-weight: 900; text-transform: uppercase;
+  letter-spacing: -.5px; line-height: 1.1; margin-bottom: 10px;
+}
+.loc-addr {
+  font-size: 15px; color: var(--gray); line-height: 1.6; margin-bottom: 20px;
+}
+.map-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--black); color: var(--white);
+  padding: 11px 22px; border-radius: 100px;
+  font-size: 13px; font-weight: 700; text-decoration: none;
+  transition: background .2s;
+}
+.map-btn:hover { background: var(--orange); }
+
+/* Datetime card */
+.dt-big {
+  font-size: clamp(32px, 5vw, 52px); font-weight: 900;
+  text-transform: uppercase; line-height: 1; margin-bottom: 8px;
+}
+.dt-big .o { color: var(--orange); }
+.dt-sub { font-size: 14px; color: var(--gray); line-height: 1.6; }
+.dt-sub strong { color: var(--white); }
+
+/* What to bring */
+.checklist { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+.check-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 15px; color: var(--black); line-height: 1.4;
+}
+.check-icon {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--orange); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 900; flex-shrink: 0; margin-top: 1px;
+}
+
+/* Speakers card */
+.spk-row {
+  display: flex; flex-direction: column; gap: 20px;
+}
+.spk-mini {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 20px;
+  background: var(--cream2); border-radius: 14px;
+  transition: background .2s;
+}
+.spk-mini:hover { background: var(--card); }
+.spk-avatar {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--card); overflow: hidden; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.spk-info { flex: 1; }
+.spk-mini-name { font-size: 15px; font-weight: 800; color: var(--black); }
+.spk-mini-role { font-size: 12px; color: var(--gray); margin-top: 2px; }
+.spk-ig-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--black); color: var(--white);
+  padding: 8px 16px; border-radius: 100px;
+  font-size: 12px; font-weight: 700; text-decoration: none;
+  flex-shrink: 0; transition: background .2s;
+}
+.spk-ig-btn:hover { background: var(--orange); }
+.spk-ig-btn svg { width: 13px; height: 13px; }
+
+/* Add to calendar */
+.cal-row {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px;
+}
+.cal-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px; border-radius: 100px;
+  font-size: 13px; font-weight: 700; text-decoration: none;
+  border: 1.5px solid var(--border); color: var(--black);
+  background: transparent; transition: all .2s; cursor: pointer;
+}
+.cal-btn:hover { background: var(--black); color: var(--white); border-color: var(--black); }
+
+/* Back link */
+.back-row {
+  margin-top: 52px; display: flex; align-items: center; gap: 16px;
+}
+.back-link {
+  font-size: 13px; color: var(--gray); text-decoration: none; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px; transition: color .2s;
+}
+.back-link:hover { color: var(--black); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-logo { font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: var(--black); }
+.footer-logo em { color: var(--orange); font-style: normal; }
+.footer-copy { font-size: 12px; color: var(--gray); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
+.reveal.vis { opacity: 1; transform: none; }
+
+/* ── MOBILE ── */
+@media(max-width: 700px){
+  header { padding: 16px 24px; }
+  .main { padding: 48px 24px 80px; }
+  .grid { grid-template-columns: 1fr; }
+  footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+  .cal-row { flex-direction: column; }
+  .spk-mini { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="header-logo">The <em>Seeds</em> × Become</a>
+  <span class="header-date">15 березня 2026 · Варшава</span>
+</header>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="t-item o">Квиток підтверджено!</span><span class="t-dot"></span>
+    <span class="t-item">Чекаємо вас 15 березня</span><span class="t-dot"></span>
+    <span class="t-item o">Rest. Baczewskich · Варшава</span><span class="t-dot"></span>
+    <span class="t-item">Старт о 12:00</span><span class="t-dot"></span>
+    <span class="t-item o">The Seeds × BECOME</span><span class="t-dot"></span>
+    <span class="t-item">Public Talk + Q&A + Нетворкінг + Фуршет</span><span class="t-dot"></span>
+    <span class="t-item o">Квиток підтверджено!</span><span class="t-dot"></span>
+    <span class="t-item">Чекаємо вас 15 березня</span><span class="t-dot"></span>
+    <span class="t-item o">Rest. Baczewskich · Варшава</span><span class="t-dot"></span>
+    <span class="t-item">Старт о 12:00</span><span class="t-dot"></span>
+    <span class="t-item o">The Seeds × BECOME</span><span class="t-dot"></span>
+    <span class="t-item">Public Talk + Q&A + Нетворкінг + Фуршет</span><span class="t-dot"></span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- Badge + Title -->
+  <div class="reveal">
+    <div class="success-badge">
+      <span class="badge-dot"></span>
+      Оплата успішна · Місце заброньовано
+    </div>
+    <h1 class="page-title">
+      Чекаємо<br>
+      вас <span class="ac">15</span><br>
+      березня
+    </h1>
+    <p class="page-subtitle">
+      Ваше місце підтверджено. <strong>Залишилось тільки прийти</strong> —
+      і провести вечір серед підприємців, які думають так само, як і ви.
+    </p>
+  </div>
+
+  <!-- Row 1: Location + DateTime -->
+  <div class="grid reveal">
+
+    <!-- Location -->
+    <div class="card">
+      <span class="card-label">Локація</span>
+      <div class="loc-venue">Rest.<br>Baczewskich</div>
+      <div class="loc-addr">
+        Aleja Chrystiana Szucha 17/19<br>
+        Warszawa, Польща<br><br>
+        Поруч з метро Politechnika
+      </div>
+      <a href="https://maps.app.goo.gl/anJUzgRTYoCAm8iB6" target="_blank" class="map-btn">
+        📍 Відкрити на Google Maps
+      </a>
+    </div>
+
+    <!-- Date + Time -->
+    <div class="card-dark reveal">
+      <span class="card-label">Коли</span>
+      <div class="dt-big">
+        15<br>
+        <span class="o">БЕРЕ-<br>ЗНЯ</span><br>
+        2026
+      </div>
+      <div class="dt-sub" style="margin-top:18px;">
+        <strong>Старт о 12:00</strong><br>
+        Тривалість — 3 години<br>
+        Talk → Q&A → Нетворкінг → Фуршет
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Row 2: Checklist + Speakers -->
+  <div class="grid reveal">
+
+    <!-- What to expect -->
+    <div class="card">
+      <span class="card-label">Що взяти з собою</span>
+      <div class="checklist">
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <span>Візитки — нетворкінг буде активним</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <span>Блокнот або нотатки в телефоні — інсайтів буде багато</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <span>Відкритий настрій — 30 підприємців, кожен зі своєю історією</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <span>Хороший апетит — буде фуршет з кавою та закусками 🥂</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Speakers -->
+    <div class="card">
+      <span class="card-label">Ваші спікери</span>
+      <div class="spk-row">
+
+        <div class="spk-mini">
+          <div class="spk-avatar">👩</div>
+          <div class="spk-info">
+            <div class="spk-mini-name">Ірина Купченко</div>
+            <div class="spk-mini-role">The Seeds Agency · Стратегічний маркетинг</div>
+          </div>
+          <a href="https://www.instagram.com/_iryna_gulagina/" target="_blank" class="spk-ig-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram
+          </a>
+        </div>
+
+        <div class="spk-mini">
+          <div class="spk-avatar">👩</div>
+          <div class="spk-info">
+            <div class="spk-mini-name">Катерина Дорошевська</div>
+            <div class="spk-mini-role">BECOME PR Agency · Персональний бренд</div>
+          </div>
+          <a href="https://www.instagram.com/doroshevskaja" target="_blank" class="spk-ig-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Row 3: Add to calendar (full width) -->
+  <div class="card grid-full reveal">
+    <span class="card-label">Додати у календар</span>
+    <p style="font-size:15px;color:var(--gray);margin-bottom:20px;line-height:1.6;">
+      Щоб не забути — збережіть подію у свій календар. Натисніть на зручний варіант:
+    </p>
+    <div class="cal-row">
+      <a class="cal-btn"
+         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Public+Talk+%C3%97+The+Seeds+%26+BECOME+%7C+%D0%92%D0%B0%D1%80%D1%88%D0%B0%D0%B2%D0%B0&dates=20260315T110000Z/20260315T140000Z&details=%D0%9F%D1%83%D0%B1%D0%BB%D1%96%D0%BA+%D0%A2%D0%B0%D0%BB%D0%BA+%D0%B4%D0%BB%D1%8F+%D0%BF%D1%96%D0%B4%D0%BF%D1%80%D0%B8%D1%94%D0%BC%D1%86%D1%96%D0%B2+%E2%80%94+%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3+%26+%D0%9E%D1%81%D0%BE%D0%B1%D0%B8%D1%81%D1%82%D0%B8%D0%B9+%D0%B1%D1%80%D0%B5%D0%BD%D0%B4+%3D+%C3%972+%D0%97%D1%80%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%8F&location=Rest.+Baczewskich%2C+Aleja+Chrystiana+Szucha+17%2F19%2C+Warszawa&sf=true&output=xml"
+         target="_blank">
+        📅 Google Calendar
+      </a>
+      <a class="cal-btn" id="icsBtn" href="#" download="public-talk-warsaw.ics">
+        🗓 Apple / Outlook (.ics)
+      </a>
+    </div>
+  </div>
+
+  <!-- Back link -->
+  <div class="back-row reveal">
+    <a href="index.html" class="back-link">
+      ← Повернутись на головну
+    </a>
+    <span style="color:var(--border)">·</span>
+    <a href="https://maps.app.goo.gl/anJUzgRTYoCAm8iB6" target="_blank" class="back-link">
+      📍 Локація на карті
+    </a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="footer-logo">The <em>Seeds</em> × Become</a>
+  <div class="footer-copy">До зустрічі 15 березня 2026 · Rest. Baczewskich · Варшава</div>
+</footer>
+
+<script>
+  // ── Scroll reveal ──
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('vis'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // ── ICS file generator ──
+  document.getElementById('icsBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//The Seeds × BECOME//Public Talk Warsaw//UK',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      'UID:public-talk-warsaw-2026@theseeds.agency',
+      'DTSTAMP:' + new Date().toISOString().replace(/[-:.]/g,'').slice(0,15) + 'Z',
+      'DTSTART:20260315T110000Z',
+      'DTEND:20260315T140000Z',
+      'SUMMARY:Public Talk × The Seeds & BECOME | Варшава',
+      'DESCRIPTION:Маркетинг & Особистий Бренд = ×2 Зростання\\nPublic Talk + Q&A + Нетворкінг + Фуршет\\nСпікери: Ірина Купченко (The Seeds) & Катерина Дорошевська (BECOME)',
+      'LOCATION:Rest. Baczewskich\\, Aleja Chrystiana Szucha 17/19\\, Warszawa',
+      'URL:https://maps.app.goo.gl/anJUzgRTYoCAm8iB6',
+      'STATUS:CONFIRMED',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url; a.download = 'public-talk-warsaw-2026.ics';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+</script>
+</body>
+</html>
