@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Seeds — OKR Q2 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,300;1,6..12,400&family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #ede8de;
+    --bg2:       #e3ddd2;
+    --card:      #faf7f2;
+    --card2:     #f3ede3;
+    --black:     #1a1a18;
+    --gray:      #7a7568;
+    --gray-lt:   #b5ae9f;
+    --border:    #ddd6c8;
+    --orange:    #FF5E00;
+    --growth:    #7652F6;
+    --prod:      #367347;
+    --vienna:    #FF72CF;
+    --radius:    20px;
+    --radius-lg: 28px;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--black);
+    font-family: 'Nunito Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px 48px 72px;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .logo span { color: var(--orange); font-style: italic; }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .q-pill {
+    background: var(--black);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 100px;
+  }
+
+  .period {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--gray);
+  }
+
+  /* ─── HERO CARD ─── */
+  .hero {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    padding: 40px 44px;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 32px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+
+  .section-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+  .section-tag::before { content: '{ '; }
+  .section-tag::after  { content: ' }'; }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 14px;
+  }
+  .hero-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--orange);
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray);
+    line-height: 1.65;
+    max-width: 450px;
+  }
+
+  .hero-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .hm {
+    background: var(--bg2);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    min-width: 130px;
+  }
+
+  .hm-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--black);
+  }
+  .hm-val.orange { color: var(--orange); }
+  .hm-val.purple { color: var(--growth); }
+  .hm-val.green  { color: var(--prod); }
+  .hm-val.pink   { color: var(--vienna); }
+
+  .hm-lbl {
+    font-size: 10.5px;
+    font-weight: 400;
+    color: var(--gray);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* ─── OKR CARDS ─── */
+  .okr-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .okr-card {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    display: grid;
+    grid-template-columns: 230px 1fr;
+  }
+
+  .okr-sidebar {
+    padding: 24px 24px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--card2);
+    position: relative;
+  }
+
+  /* colored top stripe */
+  .okr-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .c-seeds .okr-sidebar::before  { background: var(--orange); }
+  .c-growth .okr-sidebar::before { background: var(--growth); }
+  .c-prod .okr-sidebar::before   { background: var(--prod); }
+  .c-vienna .okr-sidebar::before { background: var(--vienna); }
+
+  .okr-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .okr-num {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--gray-lt);
+    text-transform: uppercase;
+  }
+
+  .dept-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .c-seeds .dept-tag  { background: var(--orange); }
+  .c-growth .dept-tag { background: var(--growth); }
+  .c-prod .dept-tag   { background: var(--prod); }
+  .c-vienna .dept-tag { background: var(--vienna); }
+
+  .okr-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15.5px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--black);
+  }
+
+  .okr-focus {
+    font-size: 10.5px;
+    font-weight: 400;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* KR rows */
+  .okr-krs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .kr {
+    display: grid;
+    grid-template-columns: 34px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 22px 13px 18px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .kr:last-child { border-bottom: none; }
+
+  .kr-n {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .c-seeds .kr-n  { color: var(--orange); }
+  .c-growth .kr-n { color: var(--growth); }
+  .c-prod .kr-n   { color: var(--prod); }
+  .c-vienna .kr-n { color: var(--vienna); }
+
+  .kr-txt {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--black);
+    line-height: 1.4;
+  }
+
+  .kr-chip {
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    color: var(--black);
+    background: var(--bg2);
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+
+  /* ─── TIMELINE ─── */
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .wave-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 22px 20px 26px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.05);
+  }
+
+  .wave-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .wave-1 .wave-icon { background: #dbeafe; }
+  .wave-2 .wave-icon { background: #fef3c7; }
+  .wave-3 .wave-icon { background: #ffedd5; }
+  .wave-4 .wave-icon { background: #dcfce7; }
+
+  .wave-date {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 4px;
+  }
+
+  .wave-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 10px;
+  }
+
+  .wave-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .wave-items li {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--gray);
+    line-height: 1.5;
+    padding-left: 14px;
+    position: relative;
+  }
+  .wave-items li::before {
+    content: '·';
+    position: absolute;
+    left: 3px;
+    color: var(--gray-lt);
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--black);
+    border-radius: var(--radius-lg);
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 28px rgba(0,0,0,0.14);
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .footer-logo span { color: var(--orange); font-style: italic; }
+
+  .footer-meta {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.05em;
+    margin-top: 3px;
+  }
+
+  .footer-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255,255,255,0.45);
+    text-align: right;
+    line-height: 1.5;
+  }
+  .footer-quote strong {
+    color: var(--orange);
+    font-style: normal;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">The <span>Seeds</span></div>
+    <div class="header-right">
+      <div class="period">16.03 → 30.06.2026</div>
+      <div class="q-pill">Q2 2026</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="section-tag">Objectives &amp; Key Results</div>
+      <div class="hero-title">Системний,<br><em>передбачуваний</em> бізнес.</div>
+      <div class="hero-sub">За Q2 будуємо ретейнерний дохід через MaaS, структуровані продажі і три нові напрямки — Growth, Production, Vienna — що запускаються паралельно.</div>
+    </div>
+    <div class="hero-metrics">
+      <div class="hm">
+        <div class="hm-val orange">€10K</div>
+        <div class="hm-lbl">MRR через MaaS</div>
+      </div>
+      <div class="hm">
+        <div class="hm-val purple">10+</div>
+        <div class="hm-lbl">Лідів / місяць</div>
+      </div>
+      <div class="hm">
+        <div class="hm-val green">≥90%</div>
+        <div class="hm-lbl">Session → Project</div>
+      </div>
+      <div class="hm">
+        <div class="hm-val pink">€7K</div>
+        <div class="hm-lbl">Growth + Production</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OKRs -->
+  <div class="okr-grid">
+
+    <div class="okr-card c-seeds">
+      <div class="okr-sidebar">
+        <div class="okr-top"><div class="okr-num">OKR 01</div><div class="dept-tag">The Seeds</div></div>
+        <div class="okr-name">Передбачуваний стратегічний дохід</div>
+        <div class="okr-focus">MaaS як основний ретейнер · pipeline · LTV клієнта</div>
+      </div>
+      <div class="okr-krs">
+        <div class="kr"><div class="kr-n">KR 1</div><div class="kr-txt">MRR через MaaS — 5 клієнтів × €2 000</div><div class="kr-chip">€10 000 / міс</div></div>
+        <div class="kr"><div class="kr-n">KR 2</div><div class="kr-txt">Стабільний pipeline — 10 лідів/міс, coverage ≥ 3× MRR</div><div class="kr-chip">≥ 20% конв.</div></div>
+        <div class="kr"><div class="kr-n">KR 3</div><div class="kr-txt">Конверсія entry-продуктів у MaaS</div><div class="kr-chip">≥ 30%</div></div>
+        <div class="kr"><div class="kr-n">KR 4</div><div class="kr-txt">LTV клієнта — контракт 9–12 місяців</div><div class="kr-chip">€18–24K LTV</div></div>
+      </div>
+    </div>
+
+    <div class="okr-card c-seeds">
+      <div class="okr-sidebar">
+        <div class="okr-top"><div class="okr-num">OKR 02</div><div class="dept-tag">The Seeds</div></div>
+        <div class="okr-name">Системні продажі стратегічних послуг</div>
+        <div class="okr-focus">Архітектура оферів · Strategic Diagnosis · системні канали</div>
+      </div>
+      <div class="okr-krs">
+        <div class="kr"><div class="kr-n">KR 1</div><div class="kr-txt">Стандартизована архітектура оферів</div><div class="kr-chip">5–7 оферів</div></div>
+        <div class="kr"><div class="kr-n">KR 2</div><div class="kr-txt">100% нових клієнтів — через Strategic Diagnosis</div><div class="kr-chip">100%</div></div>
+        <div class="kr"><div class="kr-n">KR 3</div><div class="kr-txt">Конверсія Strategic Session → Project</div><div class="kr-chip">≥ 90%</div></div>
+        <div class="kr"><div class="kr-n">KR 4</div><div class="kr-txt">Ліди з системних каналів (не особистий нетворк)</div><div class="kr-chip">≥ 40%</div></div>
+      </div>
+    </div>
+
+    <div class="okr-card c-growth">
+      <div class="okr-sidebar">
+        <div class="okr-top"><div class="okr-num">OKR 03</div><div class="dept-tag">Seeds Growth</div></div>
+        <div class="okr-name">Запуск Seeds Growth</div>
+        <div class="okr-focus">Performance marketing · Meta / Google / YouTube Ads</div>
+      </div>
+      <div class="okr-krs">
+        <div class="kr"><div class="kr-n">KR 1</div><div class="kr-txt">Офер Seeds Growth сформований і готовий до продажу</div><div class="kr-chip">до 7 квіт.</div></div>
+        <div class="kr"><div class="kr-n">KR 2</div><div class="kr-txt">Перші клієнти Growth залучені та стартували</div><div class="kr-chip">≥ 3 клієнти</div></div>
+        <div class="kr"><div class="kr-n">KR 3</div><div class="kr-txt">Активний pipeline Growth-напрямку</div><div class="kr-chip">12 лідів / міс</div></div>
+        <div class="kr"><div class="kr-n">KR 4</div><div class="kr-txt">Seeds Growth генерує перший дохід</div><div class="kr-chip">€3 000 / міс</div></div>
+      </div>
+    </div>
+
+    <div class="okr-card c-prod">
+      <div class="okr-sidebar">
+        <div class="okr-top"><div class="okr-num">OKR 04</div><div class="dept-tag">Seeds Production</div></div>
+        <div class="okr-name">Запуск Seeds Production</div>
+        <div class="okr-focus">Відео · Reels / TikTok · Креативи · контент-виробництво</div>
+      </div>
+      <div class="okr-krs">
+        <div class="kr"><div class="kr-n">KR 1</div><div class="kr-txt">Офер Seeds Production сформований і готовий до продажу</div><div class="kr-chip">до 7 квіт.</div></div>
+        <div class="kr"><div class="kr-n">KR 2</div><div class="kr-txt">Перші клієнти Production залучені та стартували</div><div class="kr-chip">≥ 2 клієнти</div></div>
+        <div class="kr"><div class="kr-n">KR 3</div><div class="kr-txt">Pipeline Production (cross-sell Growth + MaaS)</div><div class="kr-chip">12 лідів / міс</div></div>
+        <div class="kr"><div class="kr-n">KR 4</div><div class="kr-txt">Seeds Production генерує перший дохід</div><div class="kr-chip">€2 000 / міс</div></div>
+      </div>
+    </div>
+
+    <div class="okr-card c-vienna">
+      <div class="okr-sidebar">
+        <div class="okr-top"><div class="okr-num">OKR 05</div><div class="dept-tag">Seeds Vienna</div></div>
+        <div class="okr-name">Запуск Seeds Vienna</div>
+        <div class="okr-focus">Австрійський ринок · EN / DE · локальний pipeline</div>
+      </div>
+      <div class="okr-krs">
+        <div class="kr"><div class="kr-n">KR 1</div><div class="kr-txt">Офер Seeds Vienna адаптований під EN/DE ринок</div><div class="kr-chip">до 22 квіт.</div></div>
+        <div class="kr"><div class="kr-n">KR 2</div><div class="kr-txt">Перший клієнт Vienna підписаний</div><div class="kr-chip">1 контракт</div></div>
+        <div class="kr"><div class="kr-n">KR 3</div><div class="kr-txt">Локальний pipeline — партнери, дзвінки, івенти</div><div class="kr-chip">активний</div></div>
+        <div class="kr"><div class="kr-n">KR 4</div><div class="kr-txt">Seeds Vienna генерує перший дохід</div><div class="kr-chip">€2 000 / міс</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline">
+    <div class="wave-card wave-1">
+      <div class="wave-icon">🔵</div>
+      <div class="wave-date">25–30 Березня</div>
+      <div class="wave-title">Фундамент</div>
+      <ul class="wave-items">
+        <li>ICP та описи продуктів</li>
+        <li>Аудит поточних клієнтів</li>
+        <li>Формат Strategic Diagnosis</li>
+        <li>Дослідження ринків</li>
+      </ul>
+    </div>
+    <div class="wave-card wave-2">
+      <div class="wave-icon">🟡</div>
+      <div class="wave-date">1–8 Квітня</div>
+      <div class="wave-title">Побудова</div>
+      <ul class="wave-items">
+        <li>Офери по всіх продуктах</li>
+        <li>SOPs та шаблони</li>
+        <li>Outreach кампанії</li>
+        <li>Налаштування CRM</li>
+      </ul>
+    </div>
+    <div class="wave-card wave-3">
+      <div class="wave-icon">🟠</div>
+      <div class="wave-date">22 Квіт. – 15 Трав.</div>
+      <div class="wave-title">Трекшн</div>
+      <ul class="wave-items">
+        <li>Marketing Manager</li>
+        <li>Operations Manual</li>
+        <li>Run-books та партнери</li>
+        <li>Перші переговори</li>
+      </ul>
+    </div>
+    <div class="wave-card wave-4">
+      <div class="wave-icon">🟢</div>
+      <div class="wave-date">30 Червня</div>
+      <div class="wave-title">Результат</div>
+      <ul class="wave-items">
+        <li>5 MaaS контрактів</li>
+        <li>3 Growth + 2 Production</li>
+        <li>1 Vienna контракт</li>
+        <li>Перший QBR проведено</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>
+      <div class="footer-logo">The <span>Seeds</span></div>
+      <div class="footer-meta">Q2 2026 · Internal · 16.03 – 30.06.2026</div>
+    </div>
+    <div class="footer-quote">We create brands that spark<br><strong>remarkable change.</strong></div>
+  </div>
+
+</div>
+</body>
+</html>
