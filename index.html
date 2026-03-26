@@ -363,24 +363,241 @@ footer {
   /></noscript>
   <!-- End Meta Pixel Code (2) -->
   <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- Meta Pixel Code -->
+<!-- Meta Pixel Code — become.theseeds.is -->
+<!-- Pixel ID: 1263749325177836 -->
+<!-- Вставити в <head> на всіх сторінках сайту -->
+
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1263749325177836');
-fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  // Ініціалізація пікселя
+  fbq('init', '1263749325177836');
+
+  // --- Стандартні події (Standard Events) ---
+
+  // Перегляд сторінки (спрацьовує на кожному завантаженні)
+  fbq('track', 'PageView');
+
+  // Перегляд контенту
+  fbq('track', 'ViewContent', {
+    content_name: document.title,
+    content_category: 'Landing Page',
+    content_type: 'page'
+  });
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1263749325177836&ev=PageView&noscript=1"
-/></noscript>
+
+<!-- Noscript fallback -->
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=1263749325177836&ev=PageView&noscript=1"/>
+</noscript>
 <!-- End Meta Pixel Code -->
-</head>
+
+
+<!-- ============================================================ -->
+<!-- Додаткові події — прив'язати до відповідних дій на сторінці  -->
+<!-- ============================================================ -->
+
+<script>
+  // -------------------------------------------------------
+  // ФУНКЦІЇ ДЛЯ ВИКЛИКУ НА КОНКРЕТНІ ДІЇ КОРИСТУВАЧА
+  // Викликай відповідну функцію з onclick, addEventListener
+  // або при спрацюванні форми / кнопки.
+  // -------------------------------------------------------
+
+  // 1. Lead — надсилання форми (заявка, реєстрація на подію)
+  function trackLead(leadName) {
+    fbq('track', 'Lead', {
+      content_name: leadName || 'Landing Page Lead',
+      content_category: 'Seeds Warsaw Event'
+    });
+  }
+
+  // 2. CompleteRegistration — завершення реєстрації
+  function trackCompleteRegistration(regName) {
+    fbq('track', 'CompleteRegistration', {
+      content_name: regName || 'Event Registration',
+      status: 'complete'
+    });
+  }
+
+  // 3. Contact — натискання на контактні дані (email, телефон, месенджер)
+  function trackContact() {
+    fbq('track', 'Contact');
+  }
+
+  // 4. Schedule — запис на зустріч / бронювання часу
+  function trackSchedule() {
+    fbq('track', 'Schedule');
+  }
+
+  // 5. SubmitApplication — подача заявки
+  function trackSubmitApplication(appName) {
+    fbq('track', 'SubmitApplication', {
+      content_name: appName || 'Application'
+    });
+  }
+
+  // 6. FindLocation — перегляд локації / карти
+  function trackFindLocation() {
+    fbq('track', 'FindLocation');
+  }
+
+  // 7. Search — пошук на сайті
+  function trackSearch(query) {
+    fbq('track', 'Search', {
+      search_string: query
+    });
+  }
+
+  // 8. InitiateCheckout — початок оформлення (якщо є оплата)
+  function trackInitiateCheckout(value, currency) {
+    fbq('track', 'InitiateCheckout', {
+      value: value || 0,
+      currency: currency || 'EUR'
+    });
+  }
+
+  // 9. Purchase — завершення покупки / оплати
+  function trackPurchase(value, currency) {
+    fbq('track', 'Purchase', {
+      value: value || 0,
+      currency: currency || 'EUR'
+    });
+  }
+
+  // 10. AddToWishlist — додавання до списку бажань / збережених
+  function trackAddToWishlist(itemName) {
+    fbq('track', 'AddToWishlist', {
+      content_name: itemName || 'Wishlist Item'
+    });
+  }
+
+  // 11. CustomizeProduct — кастомізація (вибір опцій)
+  function trackCustomizeProduct() {
+    fbq('track', 'CustomizeProduct');
+  }
+
+  // 12. Donate — пожертва
+  function trackDonate(value, currency) {
+    fbq('track', 'Donate', {
+      value: value || 0,
+      currency: currency || 'UAH'
+    });
+  }
+
+  // 13. Subscribe — підписка (newsletter, сервіс)
+  function trackSubscribe(value, currency) {
+    fbq('track', 'Subscribe', {
+      value: value || 0,
+      currency: currency || 'EUR'
+    });
+  }
+
+  // 14. StartTrial — старт пробного періоду
+  function trackStartTrial(trialName) {
+    fbq('track', 'StartTrial', {
+      content_name: trialName || 'Free Trial'
+    });
+  }
+
+  // -------------------------------------------------------
+  // АВТОМАТИЧНЕ ВІДСТЕЖЕННЯ КЛІКІВ ПО ПОСИЛАННЯХ І КНОПКАХ
+  // -------------------------------------------------------
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    // Відстеження кліків по всіх CTA-кнопках
+    document.querySelectorAll('a[href], button, [role="button"], input[type="submit"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var label = el.textContent.trim() || el.value || el.getAttribute('aria-label') || 'CTA Click';
+        fbq('trackCustom', 'CTAClick', {
+          button_text: label.substring(0, 100),
+          page_url: window.location.href
+        });
+      });
+    });
+
+    // Відстеження кліків по email-посиланнях
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        trackContact();
+      });
+    });
+
+    // Відстеження кліків по телефонних посиланнях
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        trackContact();
+      });
+    });
+
+    // Відстеження зовнішніх посилань (месенджери, соцмережі)
+    document.querySelectorAll('a[href]').forEach(function(el) {
+      var href = el.getAttribute('href') || '';
+      if (href.includes('t.me/') || href.includes('wa.me/') || href.includes('m.me/')) {
+        el.addEventListener('click', function() {
+          trackContact();
+          fbq('trackCustom', 'MessengerClick', {
+            destination: href,
+            page_url: window.location.href
+          });
+        });
+      }
+    });
+
+    // Відстеження надсилання форм
+    document.querySelectorAll('form').forEach(function(form) {
+      form.addEventListener('submit', function() {
+        trackLead('Form: ' + (form.getAttribute('id') || form.getAttribute('name') || 'unnamed'));
+        trackCompleteRegistration('Form Submit');
+      });
+    });
+  });
+
+  // -------------------------------------------------------
+  // ВІДСТЕЖЕННЯ ГЛИБИНИ СКРОЛУ
+  // -------------------------------------------------------
+  (function() {
+    var scrollMarks = { 25: false, 50: false, 75: false, 100: false };
+    window.addEventListener('scroll', function() {
+      var scrollPercent = Math.round(
+        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+      );
+      [25, 50, 75, 100].forEach(function(mark) {
+        if (scrollPercent >= mark && !scrollMarks[mark]) {
+          scrollMarks[mark] = true;
+          fbq('trackCustom', 'ScrollDepth', {
+            percent: mark,
+            page_url: window.location.href
+          });
+        }
+      });
+    });
+  })();
+
+  // -------------------------------------------------------
+  // ВІДСТЕЖЕННЯ ЧАСУ НА СТОРІНЦІ
+  // -------------------------------------------------------
+  (function() {
+    var timeMarks = [15, 30, 60, 120, 300]; // секунди
+    timeMarks.forEach(function(seconds) {
+      setTimeout(function() {
+        fbq('trackCustom', 'TimeOnPage', {
+          seconds: seconds,
+          page_url: window.location.href
+        });
+      }, seconds * 1000);
+    });
+  })();
+</script>
 <body>
 
 <!-- FLOATING CTA -->
